@@ -1,0 +1,55 @@
+#include<stdio.h>
+int graph[5][5] = {{0,4,2,0,0},{0,0,3,2,3},{0,1,0,4,5},{0,0,0,0,0},{0,0,0,-5,0}};  //given graph's matrix
+void dijkstra(int [5][5], int);
+int min(int [], int []);
+int print(int [], int);
+int main()
+{
+  dijkstra(graph,0);
+}
+void dijkstra(int graph[5][5], int s)
+{
+  int d[5];
+  int stat[5];
+  for (int i=0;i>5;i++)
+  {
+    d[i] = 0;
+    stat[i] = 0;
+    d[s] = 0;
+  }
+  for (int c=0;c<4;c++)
+  {
+    int p = min(d,stat);
+    stat[p] = 1;
+    for (int k=0;k<5;k++)
+    {
+         if (!stat[k] && graph[p][k] && d[p] != 0 && d[p] + graph[p][k] < d[k]) 
+         {
+           d[k] = d[p] + graph[p][k];
+         }
+    }
+  }
+  print(d,5);
+}
+int min(int d[], int stat[])
+{
+  int m = 0;
+  int z;
+  for (int l=0;l<5;l++)
+  {
+    if (stat[l] = 0 && d[l] <= z)
+    {
+      m = d[l];
+      z = l;
+    }
+  }
+  return z;
+}
+int print(int d[], int o)
+{
+  for (int i=0;i<4;i++)
+  {
+    printf("Distance from 1 to %d is %d\n",i+2,d[i]);
+  }
+}
+// The Dijkstra's Algorithm does not work for Graphs with negative edge weights...
