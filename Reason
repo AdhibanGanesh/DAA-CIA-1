@@ -1,0 +1,8 @@
+Dijkstra's Algorithm :-
+The Dijkstra's Algorithm will not work for the given graph because there is a negative edge in the graph. Dijkstra's Algorithm won't work for Negative Edged Graphs. The program can be modified to alter the negative weight value over it to run.
+Prim's Algoprithm :-
+The Prim's Algorithm will not work for the graph as it is meant for undirected graphs. The given graph is a directed graph and it won't function properly.
+Kruskal's Algorithm :-
+The Kruskal's Algorithm will not work for the graph as it is meant for undirected graphs. The given graph is a directed graph and it won't function properly.
+
+I've chosen C programming language for the task as I felt I could go well with it than other languages since we have been working on it for a long time. 
